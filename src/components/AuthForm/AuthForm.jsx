@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Image, Input, Text, VStack } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
