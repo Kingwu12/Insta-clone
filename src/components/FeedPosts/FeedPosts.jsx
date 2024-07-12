@@ -3,7 +3,7 @@ import FeedPost from './FeedPost';
 import { useEffect, useState } from 'react';
 
 const FeedPosts = () => {
-  const { isLoading, setIsLoading } = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,7 +19,7 @@ const FeedPosts = () => {
             <Flex gap={2}>
               <SkeletonCircle size='10' />
               <VStack gap={2} alignItems={'flex-start'} justifyContent={'center'}>
-                <Skeleton height='10px' w={'200px'} />
+                <Skeleton height='10px' w={'500px'} />
               </VStack>
             </Flex>
             <Skeleton w={'full'}>
