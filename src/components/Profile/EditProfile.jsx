@@ -17,7 +17,6 @@ import {
 } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import useAuthStore from '../../store/authStore';
-// import useEditProfile from '../../hooks/useEditProfile';
 import useShowToast from '../../hooks/useShowToast';
 import usePreviewimg from '../../hooks/usePreviewimg';
 import useEditProfile from '../../hooks/useEditProfile';

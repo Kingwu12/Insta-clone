@@ -1,7 +1,8 @@
-import { Avatar, AvatarGroup, Button, Flex, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Avatar, AvatarGroup, Button, Flex, Text, VStack, useDisclosure } from '@chakra-ui/react';
 import useUserProfileStore from '../../store/userProfileStore';
 import useAuthStore from '../../store/authStore';
 import EditProfile from './EditProfile';
+import useFollowUser from '../../hooks/useFollowUser';
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
@@ -9,6 +10,7 @@ const ProfileHeader = () => {
   const visitingOwnProfileAndAuth = authUser && userProfile.username === authUser.username;
   const visitingAnotherProfileAndAuth = authUser && userProfile.username !== authUser.username;
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isUpdating, isFollowing, handleFollowUser } = useFollowUser(userProfile?.uid);
 
   return (
     <Flex gap={{ base: 4, sm: 10 }} py={10} direction={{ base: 'column', sm: 'row' }}>
@@ -42,8 +44,15 @@ const ProfileHeader = () => {
           )}
           {visitingAnotherProfileAndAuth && (
             <Flex gap={4} alignItems={'center'} justifyContent={'center'}>
-              <Button bg={'blue.500'} color={'white'} _hover={{ bg: 'blue.600' }} size={{ base: 'xs', md: 'sm' }}>
-                Follow
+              <Button
+                bg={'blue.500'}
+                color={'white'}
+                _hover={{ bg: 'blue.600' }}
+                size={{ base: 'xs', md: 'sm' }}
+                onClick={handleFollowUser}
+                isLoading={isUpdating}
+              >
+                {isFollowing ? 'Unfollow' : 'Follow'}
               </Button>
             </Flex>
           )}
