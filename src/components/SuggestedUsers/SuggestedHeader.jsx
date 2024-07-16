@@ -21,15 +21,6 @@ const SuggestedHeader = () => {
           </Text>
         </Link>
       </Flex>
-
-      {/* <Flex alignItems={'center'} gap={2}>
-        <Avatar size={'lg'} />
-
-        <Text fontSize={12} fontWeight={'bold'}>
-          yes
-        </Text>
-      </Flex> */}
-
       <Button
         size={'xs'}
         background={'transparent'}
