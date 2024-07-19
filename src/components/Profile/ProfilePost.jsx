@@ -17,7 +17,7 @@ import {
 import { AiFillHeart } from 'react-icons/ai';
 import { FaComment } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
-// import Comment from '../Comment/Comment';
+import Comment from '../Comment/Comment';
 import PostFooter from '../FeedPosts/PostFooter';
 import useUserProfileStore from '../../store/userProfileStore';
 import useAuthStore from '../../store/authStore';
@@ -27,7 +27,7 @@ import { deleteObject, ref } from 'firebase/storage';
 import { firestore, storage } from '../../firebase/firebase';
 import { arrayRemove, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import usePostStore from '../../store/postStore';
-// import Caption from '../Comment/Caption';
+import Caption from '../Comment/Caption';
 
 const ProfilePost = ({ post }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -149,15 +149,14 @@ const ProfilePost = ({ post }) => {
                 </Flex>
                 <Divider my={4} bg={'gray.500'} />
 
-                {/* <VStack w='full' alignItems={'start'} maxH={'350px'} overflowY={'auto'}>
-                  
+                <VStack w='full' alignItems={'start'} maxH={'350px'} overflowY={'auto'}>
+                  {/* CAPTION */}
                   {post.caption && <Caption post={post} />}
-                  
+                  {/* COMMENTS */}
                   {post.comments.map((comment) => (
                     <Comment key={comment.id} comment={comment} />
                   ))}
-                </VStack> */}
-
+                </VStack>
                 <Divider my={4} bg={'gray.8000'} />
 
                 <PostFooter isProfilePage={true} post={post} />
