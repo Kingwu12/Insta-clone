@@ -17,9 +17,9 @@ import {
 } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import useAuthStore from '../../store/authStore';
-import usePreviewImg from '../../hooks/usePreviewImg.js';
 import useEditProfile from '../../hooks/useEditProfile';
 import useShowToast from '../../hooks/useShowToast';
+import usePreviewImg from '../../hooks/usePrevImg';
 
 const EditProfile = ({ isOpen, onClose }) => {
   const [inputs, setInputs] = useState({
