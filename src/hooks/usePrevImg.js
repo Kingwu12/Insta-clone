@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useShowToast from './useShowToast';
 
-const usePreviewImg = () => {
+const usePrevImg = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const showToast = useShowToast();
   const maxFileSizeInBytes = 2 * 1024 * 1024; // 2MB
@@ -30,4 +30,4 @@ const usePreviewImg = () => {
   return { selectedFile, handleImageChange, setSelectedFile };
 };
 
-export default usePreviewImg;
+export default usePrevImg;

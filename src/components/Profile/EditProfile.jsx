@@ -19,7 +19,7 @@ import { useRef, useState } from 'react';
 import useAuthStore from '../../store/authStore';
 import useEditProfile from '../../hooks/useEditProfile';
 import useShowToast from '../../hooks/useShowToast';
-import usePreviewImg from '../../hooks/usePrevImg';
+import usePrevImg from '../../hooks/usePrevImg';
 
 const EditProfile = ({ isOpen, onClose }) => {
   const [inputs, setInputs] = useState({
@@ -29,7 +29,7 @@ const EditProfile = ({ isOpen, onClose }) => {
   });
   const authUser = useAuthStore((state) => state.user);
   const fileRef = useRef(null);
-  const { handleImageChange, selectedFile, setSelectedFile } = usePreviewImg();
+  const { handleImageChange, selectedFile, setSelectedFile } = usePrevImg();
   const { isUpdating, editProfile } = useEditProfile();
   const showToast = useShowToast();
 
