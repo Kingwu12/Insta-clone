@@ -17,9 +17,9 @@ import {
 } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import useAuthStore from '../../store/authStore';
-import usePreviewImg from '../../hooks/usePreviewImg';
 import useEditProfile from '../../hooks/useEditProfile';
 import useShowToast from '../../hooks/useShowToast';
+import usePreviewimg from '../../hooks/usePreviewImg';
 
 const EditProfile = ({ isOpen, onClose }) => {
   const [inputs, setInputs] = useState({
@@ -29,7 +29,7 @@ const EditProfile = ({ isOpen, onClose }) => {
   });
   const authUser = useAuthStore((state) => state.user);
   const fileRef = useRef(null);
-  const { handleImageChange, selectedFile, setSelectedFile } = usePreviewImg();
+  const { handleImageChange, selectedFile, setSelectedFile } = usePreviewimg();
   const { isUpdating, editProfile } = useEditProfile();
   const showToast = useShowToast();
 
